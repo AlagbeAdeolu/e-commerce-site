@@ -1,9 +1,12 @@
+
 import './App.css';
+import LoadingSpinner from './components/LoadingSpinner';
 
 function App() {
   return (
-    <div className="App">
+    <div >
      Hello World
+     <LoadingSpinner/>
     </div>
   );
 }
