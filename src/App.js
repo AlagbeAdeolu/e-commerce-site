@@ -1,12 +1,10 @@
-
 import './App.css';
-import LoadingSpinner from './components/LoadingSpinner';
+import ProductList from './components/ProductList';
 
 function App() {
   return (
     <div >
-     Hello World
-     <LoadingSpinner/>
+     <ProductList />
     </div>
   );
 }
