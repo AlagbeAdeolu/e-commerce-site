@@ -17,8 +17,7 @@ const ProductList = () => {
     <div className="container mx-auto w-[100%] p-[20px] columns-1 md:columns-2 lg:columns-4 ">
       <ul className="">
         {loading && <LoadingSpinner />}
-        {!loading &&
-          !error &&
+        {!loading && !error &&
           products.map((product) => {
             return (
               <li key={product.id}>
