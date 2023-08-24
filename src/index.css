@@ -9,6 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 10px 30px;
+   
 }
 
 code {
@@ -16,6 +18,4 @@ code {
     monospace;
 }
 
-img {
-  height: 100px;
-}
+
