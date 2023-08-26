@@ -12,25 +12,36 @@ const ProductList = () => {
   }, [dispatch]);
 
   const { products, loading, error } = useSelector((state) => state.products);
+  const filteredProducts = products.filter(
+    (item) =>
+      item.category === "men's clothing" || item.category === "women's clothing"
+  );
 
   return (
-    <div className="container mx-auto w-[100%] p-[20px] columns-1 md:columns-2 lg:columns-4 ">
-      <ul className="">
-        {loading && <LoadingSpinner />}
-        {!loading && !error &&
-          products.map((product) => {
-            return (
-              <li key={product.id}>
+    <div className="">
+      <section className="py-16">
+        <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 ">
+          {loading && <LoadingSpinner />}
+          {!loading &&
+            !error &&
+            filteredProducts.map((product) => {
+              return (
                 <ProductItem
-                  name={product.title}
+                  key={product.id}
+                  title={product.title}
                   price={product.price}
                   image={product.image}
+                  id={product.id}
+                  category={product.category}
                 />
-              </li>
-            );
-          })}
+              );
+            })}
           {error && !loading && <p>{error}</p>}
-      </ul>
+        </div>
+        </div>
+      </section>
+
     </div>
   );
 };
