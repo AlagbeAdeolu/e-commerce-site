@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AddOutlined, RemoveRedEyeRounded } from "@mui/icons-material";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/cartSlice";
 
 const ProductItem = (props) => {
+  const dispatch = useDispatch()
   return (
-    <Link to={`/products/${props.id}`}>
       <div>
         <div className="border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition ">
           <div className="w-full h-full flex justify-center">
@@ -17,7 +19,7 @@ const ProductItem = (props) => {
             </div>
           </div>
           <div className="absolute top-4 right-11 group-hover:right-4 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 p-2 transition-all duration-300 ">
-            <button>
+            <button onClick={() => dispatch(addToCart({id:props.id, title: props.title, price: props.price}))}>
               <div className="flex justify-center items-center bg-red-500 text-white w-12 h-12">
                 <AddOutlined className="text-3xl" />
               </div>
@@ -42,7 +44,6 @@ const ProductItem = (props) => {
           </div>
         </div>
       </div>
-    </Link>
   );
 };
 
