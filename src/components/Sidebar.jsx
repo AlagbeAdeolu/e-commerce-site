@@ -34,25 +34,40 @@ const Sidebar = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto border-b ">
-        {cart.map((item) => {
-          return <ShoppingCartItem item={item} key={item.id} />;
-        })}
-      </div>
-      <div className="flex flex-col gap-y-3 py-4 mt-4">
-        <div className="flex w-full justify-between items-center">
-          <div className="uppercase font-semibold">
-            <span className="mr-2">Total:</span> $ {cart.reduce((total,item) => total + item.amount*item.price, 0).toFixed(2)}
-          </div>
-          <div
-            onClick={() => dispatch(clearCart())}
-            className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl "
-          >
-            <DeleteOutline />
-          </div>
+      <div className="bg-red-500 flex flex-col justify-between">
+        <div className="flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto border-b ">
+          {cart.map((item) => {
+            return <ShoppingCartItem item={item} key={item.id} />;
+          })}
         </div>
-        <Link to='/' className="bg-gray-300 w-full p-4 flex justify-center items-center font-medium ">View Cart</Link>
-        <Link to='/' className="bg-neutral-950 w-full text-white  p-4 flex justify-center items-center font-medium">Checkout</Link>
+        <div className="flex flex-col gap-y-3 py-4 mt-4">
+          <div className="flex w-full justify-between items-center">
+            <div className="uppercase font-semibold">
+              <span className="mr-2">Total:</span> ${" "}
+              {cart
+                .reduce((total, item) => total + item.amount * item.price, 0)
+                .toFixed(2)}
+            </div>
+            <div
+              onClick={() => dispatch(clearCart())}
+              className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl "
+            >
+              <DeleteOutline />
+            </div>
+          </div>
+          <Link
+            to="/"
+            className="bg-gray-300 w-full p-4 flex justify-center items-center font-medium "
+          >
+            View Cart
+          </Link>
+          <Link
+            to="/"
+            className="bg-neutral-950 w-full text-white  p-4 flex justify-center items-center font-medium"
+          >
+            Checkout
+          </Link>
+        </div>
       </div>
     </div>
   );
