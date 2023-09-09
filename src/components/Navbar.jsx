@@ -15,8 +15,6 @@ function Navbar() {
   const item = "flex items-center text-[18px]";
   const cart = useSelector(state=> state.cart.cartItems)
   const dispatch = useDispatch()
-  // console.log(cart.reduce((total, item) => total + (item.amount * item.price), 0).toFixed(2))
-  console.log(cart.reduce((total, item) => total + item.amount, 0 ))
 
   return (
     <>

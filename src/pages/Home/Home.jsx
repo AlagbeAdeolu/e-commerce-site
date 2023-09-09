@@ -1,13 +1,12 @@
 import React from "react";
 import ProductList from "../../components/ProductList";
-import Sidebar from "../../components/Sidebar";
+import Hero from "../../components/Hero";
 
 function Home() {
   return (
     <div>
       <section className="py-16">
-        Home
-        <Sidebar />
+        <Hero />
         <ProductList />
       </section>
     </div>

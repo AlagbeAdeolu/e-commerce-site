@@ -5,7 +5,7 @@ import Payment from "../assets/img/payment.png";
 function Footer() {
   return (
     <footer className="mt-[100px] mr-[200px] mb-[20px] ml-[200px]">
-      <section className="flex gap-[50px]">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px]">
         <div className="flex flex-1 flex-col gap-[10px] text-justify text-[14px]">
           <h1 className="text-[18px] text-[#555] font-medium">Categories</h1>
           <span className="text-gray-500">Men</span>
